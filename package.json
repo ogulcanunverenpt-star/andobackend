@@ -1,0 +1,25 @@
+{
+	"name": "lobby",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"build:railway": "esbuild src/railway.ts --bundle --platform=node --format=cjs --target=node22 --outfile=dist/railway.js",
+		"start:railway": "node dist/railway.js",
+		"test:railway": "node --test test/railway.test.cjs",
+		"cf-typegen": "wrangler types"
+	},
+	"devDependencies": {
+		"@types/ws": "^8.18.1",
+		"esbuild": "0.25.4",
+		"typescript": "^5.5.2",
+		"wrangler": "4.26.0"
+	},
+	"dependencies": {
+		"moment": "^2.30.1",
+		"ws": "^8.18.3"
+	},
+	"packageManager": "yarn@4.5.3"
+}
